@@ -14,13 +14,13 @@ function App() {
         <Slider />
         <div>
             <Container>
-                <Text element={"div"}>
+                <Text element="div">
                     Это "div" элемент
                 </Text>
-                <Text element={"p"}>
+                <Text element="p">
                     Это "p" элемент
                 </Text>
-                <Text element={"span"}>
+                <Text element="span">
                     Это "span" элемент
                 </Text>
             </Container>

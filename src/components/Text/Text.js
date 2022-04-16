@@ -24,6 +24,10 @@ const Text = ({element, children, className, strong = false, italic = false, dis
 
 };
 
+Text.defaultProps = {
+    element: 'div',
+}
+
 Text.propTypes = {
     element: PropTypes.oneOf(['div', 'p', 'span']).isRequired,
     children: PropTypes.node,

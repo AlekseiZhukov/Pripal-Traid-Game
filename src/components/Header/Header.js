@@ -11,11 +11,8 @@ const Header = () => {
             <div className={s.header}>
                 <Container>
                     <div className={s.wrap}>
-                        <div className={s.logo} style={{
-                            background: `url(${logoPng})`,
-                            backgroundRepeat: "no-repeat",
-                            backgroundSize: "contain"
-                        }}/>
+                        <img className={s.logo}
+                            src={logoPng} alt="Logo"/>
                         <ul className={s.nav}>
                             {MENU.map((item, index) => <li key={index}><a href="#">{item}</a></li>)}
                         </ul>

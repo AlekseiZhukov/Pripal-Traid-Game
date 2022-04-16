@@ -11,21 +11,19 @@ const Heading = ({
                  }) => {
 
     const el = `h${level}`
+
     return React.createElement(el, {
         className: cn(s.root, className, s[`level${level}`])
     }, children);
-
 };
 
 Heading.defaultProps = {
     level: 1,
-
-}
+};
 
 Heading.propTypes = {
-
     className: PropTypes.string,
-    level: PropTypes.oneOf([1, 2, 3, 4, 5]).isRequired,
+    level: PropTypes.oneOf([1, 2, 3, 4, 5]),
     children: PropTypes.node
 };
 
