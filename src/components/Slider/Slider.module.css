@@ -72,20 +72,3 @@
     cursor: pointer;
 }
 
-@media (max-width: 1024px) {
-    .container {
-        margin: 0 25px;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        margin: 0 14px;
-    }
-}
-
-@media (max-width: 560px) {
-    .container {
-        margin: 0 8px;
-    }
-}
