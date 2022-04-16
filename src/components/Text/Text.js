@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Text.module.css'
+import s from './Text.module.scss'
 import cn from 'classnames'
 import PropTypes from "prop-types";
 
