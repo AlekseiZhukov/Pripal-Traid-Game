@@ -2,6 +2,7 @@ import React from "react";
 import s from './Slider.module.scss'
 import Container from "../Container";
 import Heading from "../Heading";
+import Button from "../Button";
 
 
 
@@ -22,7 +23,7 @@ const Slider = () => {
                     </Heading>
 
                     <div className={s.call}>
-                        <button className={s.button}>Wow</button>
+                        <Button  name="Wow" />
                     </div>
 
                 </Container>
