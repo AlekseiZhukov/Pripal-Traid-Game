@@ -1,4 +1,4 @@
-import s from './Footer.module.css'
+import s from './Footer.module.scss'
 import Container from "../Container";
 import React from "react";
 
