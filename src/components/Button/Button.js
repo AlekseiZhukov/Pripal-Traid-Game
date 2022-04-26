@@ -5,30 +5,30 @@ import cn from 'classnames';
 
 
 const Button = ({
-                    black,
-                    name,
+                    color,
+                    children,
                     onHandleClick,
 
                 }) => {
 
     const handleClick = () => {
-        onHandleClick()
+        onHandleClick && onHandleClick()
     };
 
     return (
-        <button className={cn(s.root, {[s.black]: black})} onClick={onHandleClick && handleClick}>
-            {name}
+        <button className={cn(s.root, s[color])} onClick={handleClick}>
+            {children}
         </button>
     );
 };
 
 Button.defaultProps = {
-    black: false
+    color: 'default'
 };
 
 Button.propTypes = {
-    black: PropType.bool,
-    name: PropType.string,
+    color: PropType.oneOf(['default', 'black']),
+    children: PropType.node,
     onHandleClick: PropType.func,
 
 };

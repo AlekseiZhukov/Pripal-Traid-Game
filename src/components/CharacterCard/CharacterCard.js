@@ -20,10 +20,10 @@ const CharacterCard = ({
                        }) => {
 
     const handleClick = () => {
-        onLikeClick(id)
+        onLikeClick && onLikeClick(id)
     };
     const handleReadBioClick = () => {
-        onReadBioClick(id)
+        onReadBioClick && onReadBioClick(id)
     }
 
     return (

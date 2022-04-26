@@ -23,7 +23,7 @@ const Slider = () => {
                     </Heading>
 
                     <div className={s.call}>
-                        <Button  name="Wow" />
+                        <Button>Wow</Button>
                     </div>
 
                 </Container>
