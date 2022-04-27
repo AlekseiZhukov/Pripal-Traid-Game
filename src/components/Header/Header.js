@@ -1,14 +1,19 @@
 import React, {useCallback, useEffect, useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
 import Container from "../Container";
 import cn from 'classnames';
 import s from './Header.module.scss';
-import logoPng from '../assets/logo.png';
+import logoPng from '../../assets/logo.png';
 
-
-const MENU = ['Menu 1', 'Menu 2', 'Menu 3', 'Menu 4'];
+const MENU = [{name: "Main Page", href: "/"}, {name: "Characters Page", href: "/characters"}, {name: "About Game Page", href: "/about"}, {name: "Contacts Page", href: "/contacts"}];
 
 const Header = () => {
     const [small, setSmall] = useState(false)
+    const navigate = useNavigate()
+
+    const handleLogoClick = () => {
+        navigate('/')
+    }
 
     const handleScrollY = useCallback(e => {
         if (window.scrollY > 60) {
@@ -31,10 +36,12 @@ const Header = () => {
             <div className={cn(s.header, {[s.small]: small})}>
                 <Container>
                     <div className={s.wrap}>
-                        <img className={s.logo}
-                             src={logoPng} alt="Logo"/>
+                        <div className={s.logo} onClick={handleLogoClick}>
+                            <img src={logoPng} alt="Logo"/>
+                        </div>
+
                         <ul className={s.nav}>
-                            {MENU.map((item, index) => <li key={index}><a href="#">{item}</a></li>)}
+                            {MENU.map(({name, href}, index) => <li key={index}><Link to={href}>{name}</Link></li>)}
                         </ul>
                     </div>
 
