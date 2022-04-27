@@ -1,0 +1,15 @@
+.root {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}
+.btnWrap {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+}
+
+.imgWrap {
+    padding: 12px 0;
+    text-align: center;
+}

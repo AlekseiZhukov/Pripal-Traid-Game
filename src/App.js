@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Container from "./components/Container";
 import Heading from "./components/Heading";
 import CharacterCard from "./components/CharacterCard";
+import Biography from "./components/pages/Biography";
 
 const CHARACTER = [
     {
@@ -74,6 +75,7 @@ const CHARACTER = [
 function App() {
 
     const [character, setCharacter] = useState(CHARACTER);
+    const [idCardBio, setIdCardBio] = useState(null)
 
     const handleLikeClick = (id) => {
         setCharacter(prevState => {
@@ -90,6 +92,22 @@ function App() {
             });
         });
     };
+
+    const handReadBioClick = (id) => {
+        if (!id) {
+            setIdCardBio(null)
+        }
+        setIdCardBio(id)
+    }
+
+    if (idCardBio) {
+        return <>
+            <Header/>
+            <Biography id={idCardBio} onBackClick={handReadBioClick}/>
+            <Footer/>
+        </>
+
+    }
 
     return (
         <>
@@ -113,6 +131,7 @@ function App() {
                                     description={item.description}
                                     isLike={item.isLike}
                                     onLikeClick={handleLikeClick}
+                                    onReadBioClick={handReadBioClick}
                                 />
                             </div>
                         })}
