@@ -8,7 +8,6 @@ import s from './MainPage.module.scss';
 
 import {CHARACTER} from '../../constants/contentCharacter'
 
-
 const MainPage = () => {
 
     const [character, setCharacter] = useState(CHARACTER);

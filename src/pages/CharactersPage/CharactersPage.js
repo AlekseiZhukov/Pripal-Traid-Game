@@ -51,6 +51,7 @@ const CharactersPage = () => {
                         })}
 
                     </div>
+
                 </Container>
             </section>
         </div>
