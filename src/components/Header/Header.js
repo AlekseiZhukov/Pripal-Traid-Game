@@ -1,11 +1,11 @@
 import React, {useCallback, useEffect, useState} from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import Container from "../Container";
 import cn from 'classnames';
 import s from './Header.module.scss';
 import logoPng from '../../assets/logo.png';
 
-const MENU = [{name: "Main Page", href: "/"}, {name: "Characters Page", href: "/characters"}, {name: "About Game Page", href: "/about"}, {name: "Contacts Page", href: "/contacts"}];
+const MENU = [{name: "Main", href: "/"}, {name: "Characters", href: "/characters"}, {name: "About", href: "/about"}, {name: "Contacts", href: "/contacts"}];
 
 const Header = () => {
     const [small, setSmall] = useState(false)
@@ -41,7 +41,19 @@ const Header = () => {
                         </div>
 
                         <ul className={s.nav}>
-                            {MENU.map(({name, href}, index) => <li key={index}><Link to={href}>{name}</Link></li>)}
+                            {MENU.map(({name, href}, index) =>(
+                                <li key={index}>
+                                    <NavLink
+                                        to={href}
+                                        className={({isActive})=> {
+                                            return isActive ? s.active : null
+                                        }}
+                                    >
+                                    {name}
+                                    </NavLink>
+                                </li>
+                            ) )}
+
                         </ul>
                     </div>
 
