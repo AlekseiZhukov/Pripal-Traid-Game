@@ -25,7 +25,7 @@ const Biography = () => {
         setData(BIO[id])
     }, [id])
 
-    const handleScroll =  useCallback(() => {
+    const handleScroll = useCallback(() => {
         const el = hash && document.getElementById(hash.substr(1))
         el && el.scrollIntoView({block: 'center', behavior: "smooth"})
     }, [hash])
@@ -58,38 +58,38 @@ const Biography = () => {
 
                 {
                     data.map((item, index) => {
-                            switch (item.type) {
-                                case "h1":
-                                    return (
-                                        <Heading level={1} key={index}>{item.text}</Heading>
-                                    )
+                        switch (item.type) {
+                            case "h1":
+                                return (
+                                    <Heading level={1} key={index}>{item.text}</Heading>
+                                )
 
-                                case "h2":
-                                    const hashHref = item.text.split(/,\s|\s/).join('_')
-                                    return (
-                                        <Heading className={s.header} level={2} key={index} >
-                                            <Link id={hashHref} to={{hash: `#${hashHref}`}} >
-                                                {item.text}
-                                                <LinkIcon />
-                                            </Link>
-                                        </Heading>
-                                    )
+                            case "h2":
+                                const hashHref = item.text.split(/,\s|\s/).join('_')
+                                return (
+                                    <Heading className={s.header} level={2} key={index}>
+                                        <Link id={hashHref} to={{hash: `#${hashHref}`}}>
+                                            {item.text}
+                                            <LinkIcon/>
+                                        </Link>
+                                    </Heading>
+                                )
 
-                                case "paragraph":
-                                    return (
-                                        <Text element="p" key={index}>{item.text}</Text>
-                                    )
+                            case "paragraph":
+                                return (
+                                    <Text element="p" key={index}>{item.text}</Text>
+                                )
 
-                                case "img":
-                                    return (
-                                        <div className={s.imgWrap} key={index}><img src={item.src} alt="sam img"/></div>
-                                    )
+                            case "img":
+                                return (
+                                    <div className={s.imgWrap} key={index}><img src={item.src} alt="sam img"/></div>
+                                )
 
-                                default:
-                                    return (
-                                        <Text element="p" key={index}>{item.text}</Text>
-                                    )
-                            }
+                            default:
+                                return (
+                                    <Text element="p" key={index}>{item.text}</Text>
+                                )
+                        }
                     })
 
                 }
