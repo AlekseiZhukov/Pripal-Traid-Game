@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-
 const componentName = process.argv[2];
+const componentFolder = process.argv[3]
 
 const componentTemplate = `import React from 'react';
 import s from './${componentName}.module.scss';
@@ -11,7 +11,7 @@ const ${componentName} = () => {
         <div className={s.root}>
                             
         </div>
-                               );
+    );
 };
                             
 export default ${componentName};`;
@@ -21,7 +21,9 @@ const indexTemplate =` import ${componentName} from './Input'
 export default ${componentName};`
 
 const createComponents = new Promise((resolve, reject) => {
-    const path = `./src/components/${componentName}`;
+
+    const path = `./src/${componentFolder}/${componentName}`;
+
     if (fs.existsSync(path)) {
         reject('Component is exist')
     }

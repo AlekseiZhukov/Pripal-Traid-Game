@@ -1,0 +1,25 @@
+.root{
+
+}
+.wrapper {
+  display: flex;
+  flex-flow: row;
+
+}
+.contacts {
+  width: 60%;
+}
+.subtitle {
+  margin-top: 15px;
+}
+.imgWrap {
+  padding: 12px 0;
+  text-align: center;
+  width: 25%;
+  margin-right: 90px;
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
