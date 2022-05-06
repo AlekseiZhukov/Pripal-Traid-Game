@@ -1,12 +1,20 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom'
+import React, {useEffect} from 'react';
+import {Outlet, useLocation} from 'react-router-dom'
 import Header from "../Header";
 import Footer from "../Footer";
 import s from './Layout.module.scss';
                             
 const Layout = () => {
+
+
+    const {pathname} = useLocation()
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[pathname])
+
     return (
-        <div className={s.root}>
+        <div className={s.root} >
             <Header/>
             <Outlet />
             <Footer/>

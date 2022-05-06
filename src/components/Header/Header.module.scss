@@ -50,11 +50,17 @@
 
 .nav li a {
     transition: color 0.2s linear;
+    &.active {
+        color: red;
+    }
 }
 
 .nav li:hover a {
     color: red;
 }
+
+
+
 
 .nav li a {
     padding: 21px;
