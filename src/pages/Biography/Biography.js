@@ -1,21 +1,18 @@
-import React, {useCallback, useEffect, useState} from 'react';
-import {useNavigate, useParams, Navigate, Link, useLocation} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {useNavigate, useParams, Navigate, Link} from "react-router-dom";
 import Heading from "../../components/Heading";
 import Text from "../../components/Text";
 import Container from "../../components/Container";
 import Button from "../../components/Button";
-import {ReactComponent as LinkIcon} from '../../assets/link_icon.svg'
-import s from './Biography.module.scss'
-
 import {BIO} from '../../constants/contentBiography'
+import s from './Biography.module.scss'
+import {ReactComponent as LinkIcon} from '../../assets/link_icon.svg'
 
 const Biography = () => {
 
     const [data, setData] = useState([])
-
     const {id} = useParams();
     const navigate = useNavigate();
-    const {hash} = useLocation()
 
     const handleGoBackClick = () => {
         navigate(-1)
@@ -25,26 +22,12 @@ const Biography = () => {
         setData(BIO[id])
     }, [id])
 
-    const handleScroll = useCallback(() => {
-        const el = hash && document.getElementById(hash.substr(1))
-        el && el.scrollIntoView({block: 'center', behavior: "smooth"})
-    }, [hash])
-
-    useEffect(() => {
-        window.addEventListener('load', handleScroll)
-        return () => {
-            window.removeEventListener('load', handleScroll)
-        }
-
-    }, [handleScroll])
-
 
     if (!data) {
         return <Navigate to="/characters" replace/>
     }
 
     return (
-
         <div className={s.root}>
             <Container>
                 <div>
@@ -55,7 +38,6 @@ const Biography = () => {
                         Go Back
                     </Button>
                 </div>
-
                 {
                     data.map((item, index) => {
                         switch (item.type) {
@@ -91,7 +73,6 @@ const Biography = () => {
                                 )
                         }
                     })
-
                 }
             </Container>
         </div>

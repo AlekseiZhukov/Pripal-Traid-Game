@@ -24,12 +24,13 @@
 
     & svg {
         position: absolute;
-        height: 17px;
+        height: .70em;
         width: auto;
         top: 7px;
         right: -21px;
         cursor: pointer;
         opacity: 0;
+        transition: opacity .25s ease-in-out;
         &:hover {
             opacity: 1;
         }

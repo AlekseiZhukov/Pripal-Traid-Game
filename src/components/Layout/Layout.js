@@ -1,17 +1,21 @@
-import React, {useEffect} from 'react';
-import {Outlet, useLocation} from 'react-router-dom'
+import React from 'react';
+import {Outlet, useMatch} from 'react-router-dom'
 import Header from "../Header";
 import Footer from "../Footer";
+
 import s from './Layout.module.scss';
-                            
+
 const Layout = () => {
+    const match = useMatch("/login")
 
-
-    const {pathname} = useLocation()
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    },[pathname])
+    if (match) {
+        return (
+            <div className={s.root} >
+                <Outlet />
+                <Footer/>
+            </div>
+        )
+    }
 
     return (
         <div className={s.root} >

@@ -1,3 +1,3 @@
- import ContactsPage from './Input'
+ import ContactsPage from './ContactsPage'
 
 export default ContactsPage;

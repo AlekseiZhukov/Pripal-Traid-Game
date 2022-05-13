@@ -1,3 +1,3 @@
- import AboutGamePage from './Input'
+ import AboutGamePage from './AboutGamePage'
 
 export default AboutGamePage;

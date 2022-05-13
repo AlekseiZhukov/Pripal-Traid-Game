@@ -1,3 +1,3 @@
- import Main from './Input'
+ import Main from './MainPage'
 
 export default Main;
