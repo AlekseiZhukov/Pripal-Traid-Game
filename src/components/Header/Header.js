@@ -39,7 +39,6 @@ const Header = () => {
                         <div className={s.logo} onClick={handleLogoClick}>
                             <img src={logoPng} alt="Logo"/>
                         </div>
-
                         <ul className={s.nav}>
                             {MENU.map(({name, href}, index) =>(
                                 <li key={index}>
@@ -53,10 +52,8 @@ const Header = () => {
                                     </NavLink>
                                 </li>
                             ) )}
-
                         </ul>
                     </div>
-
                 </Container>
             </div>
         </header>

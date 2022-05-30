@@ -3,12 +3,10 @@ import s from './Button.module.scss';
 import PropType from 'prop-types';
 import cn from 'classnames';
 
-
 const Button = ({
                     color,
                     children,
                     onHandleClick,
-
                 }) => {
 
     const handleClick = () => {
@@ -17,7 +15,7 @@ const Button = ({
 
     return (
         <button className={cn(s.root, s[color])} onClick={handleClick}>
-            {children}
+            <span>{children}</span>
         </button>
     );
 };

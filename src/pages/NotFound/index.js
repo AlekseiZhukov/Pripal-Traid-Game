@@ -1,3 +1,3 @@
- import NotFound from './Input'
+ import NotFound from './NotFound'
 
 export default NotFound;

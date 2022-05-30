@@ -3,7 +3,7 @@ import Slider from "../../components/Slider";
 import Container from "../../components/Container";
 import Heading from "../../components/Heading";
 import CharacterCard from "../../components/CharacterCard";
-import {useLocation} from "react-router-dom";
+
 import s from './MainPage.module.scss';
 
 import {CHARACTER} from '../../constants/contentCharacter'
@@ -12,8 +12,6 @@ import {CHARACTER} from '../../constants/contentCharacter'
 const MainPage = () => {
 
     const [character, setCharacter] = useState(CHARACTER);
-
-    const location = useLocation()
 
     const handleLikeClick = (id) => {
         setCharacter(prevState => {
@@ -25,7 +23,6 @@ const MainPage = () => {
                         isLike: !item.isLike
                     }
                 }
-
                 return item
             });
         });
@@ -56,7 +53,6 @@ const MainPage = () => {
                                 />
                             </div>
                         })}
-
                     </div>
                 </Container>
             </section>
