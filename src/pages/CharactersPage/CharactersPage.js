@@ -1,30 +1,15 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import Container from "../../components/Container";
 import Heading from "../../components/Heading";
 import CharacterCard from "../../components/CharacterCard";
 
 import s from './CharactersPage.module.scss';
+import {CharactersContext} from "../../context/charactersContext";
 
-import {CHARACTER} from '../../constants/contentCharacter';
 
 const CharactersPage = () => {
+    const {character, handleLikeClick} = useContext(CharactersContext)
 
-    const [character, setCharacter] = useState(CHARACTER);
-    const handleLikeClick = (id) => {
-        setCharacter(prevState => {
-
-            return prevState.map(item => {
-                if (item.id === id) {
-                    return {
-                        ...item,
-                        isLike: !item.isLike
-                    }
-                }
-
-                return item
-            });
-        });
-    };
     return (
         <div className={s.root}>
             <section className={s.cardSection}>
