@@ -1,32 +1,15 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import Slider from "../../components/Slider";
 import Container from "../../components/Container";
 import Heading from "../../components/Heading";
 import CharacterCard from "../../components/CharacterCard";
 
 import s from './MainPage.module.scss';
-
-import {CHARACTER} from '../../constants/contentCharacter'
+import {CharactersContext} from "../../context/charactersContext";
 
 
 const MainPage = () => {
-
-    const [character, setCharacter] = useState(CHARACTER);
-
-    const handleLikeClick = (id) => {
-        setCharacter(prevState => {
-
-            return prevState.map(item => {
-                if (item.id === id) {
-                    return {
-                        ...item,
-                        isLike: !item.isLike
-                    }
-                }
-                return item
-            });
-        });
-    };
+    const {character, handleLikeClick} = useContext(CharactersContext)
 
     return (
         <>
@@ -49,8 +32,8 @@ const MainPage = () => {
                                     description={item.description}
                                     isLike={item.isLike}
                                     onLikeClick={handleLikeClick}
-
                                 />
+
                             </div>
                         })}
                     </div>

@@ -72,8 +72,8 @@ const Login = () => {
                 <div className={s.card}>
                     <h1 className={s.title}>Login</h1>
                     <form onSubmit={handleLoginFormSubmit}>
-                        <Input type="email" id="#email"  name="email" label="Email" value={loginData.email} handleChange={handleChangeLogin}/>
-                        <Input type="password" id="#password" name="password" label="Password" value={loginData.password} handleChange={handleChangeLogin}/>
+                        <Input type="email" id="email"  name="email" label="Email" value={loginData.email} handleChange={handleChangeLogin}/>
+                        <Input type="password" id="password" name="password" label="Password" value={loginData.password} handleChange={handleChangeLogin}/>
                         <div className={s.buttonContainer}>
                             <Button>Go</Button>
                         </div>
@@ -88,13 +88,13 @@ const Login = () => {
                     </h1>
                     <form onSubmit={handleRegisterFormSubmit}>
                         <div className={s.inputContainer}>
-                            <Input type="email" id="#signup-email" name="email" label="Email"  color="white" value={registerData.email} handleChange={handleChangeRegister}/>
+                            <Input type="email" id="signup-email" name="email" label="Email"  color="white" value={registerData.email} handleChange={handleChangeRegister}/>
                         </div>
                         <div className={s.inputContainer}>
-                            <Input type="password" id="#signup-password" name="password" label="Password"  color="white" value={registerData.password} handleChange={handleChangeRegister}/>
+                            <Input type="password" id="signup-password" name="password" label="Password"  color="white" value={registerData.password} handleChange={handleChangeRegister}/>
                         </div>
                         <div className={s.inputContainer}>
-                            <Input type="password" id="#signup-repeat-password" name="repeat" label="Repeat Password"  color="white" value={registerData.repeat} handleChange={handleChangeRegister}/>
+                            <Input type="password" id="signup-repeat-password" name="repeat" label="Repeat Password"  color="white" value={registerData.repeat} handleChange={handleChangeRegister}/>
                         </div>
                         <div className={s.buttonContainer}>
                             <Button>Register</Button>
