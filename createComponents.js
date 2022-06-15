@@ -16,7 +16,7 @@ const ${componentName} = () => {
                             
 export default ${componentName};`;
 
-const indexTemplate =` import ${componentName} from './Input'
+const indexTemplate =` import ${componentName} from './${componentName}'
 
 export default ${componentName};`
 
